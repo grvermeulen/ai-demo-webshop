@@ -1,5 +1,5 @@
 {
-  "name": "Agentic PR Test",
+  "name": "My workflow",
   "nodes": [
     {
       "parameters": {
@@ -13,8 +13,11 @@
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2,
-      "position": [2080, 420],
-      "id": "960b31a5-3a74-4560-9a5e-3b2863737de0",
+      "position": [
+        1840,
+        200
+      ],
+      "id": "1c5f1850-5bd8-4941-aad2-1f53c5ff7f3b",
       "name": "Browser Agent"
     },
     {
@@ -28,8 +31,11 @@
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2,
-      "position": [772, 420],
-      "id": "9b9e45df-ee0c-4fc1-b8fa-c2d5423849c1",
+      "position": [
+        540,
+        200
+      ],
+      "id": "377f4cee-ecc5-4208-abf6-72fe1554abc6",
       "name": "Testplan Agent"
     },
     {
@@ -37,7 +43,7 @@
         "authentication": "oAuth2",
         "owner": {
           "__rl": true,
-          "value": "tlolkema",
+          "value": "grvermeulen",
           "mode": "name"
         },
         "repository": {
@@ -45,18 +51,23 @@
           "value": "ai-demo-webshop",
           "mode": "name"
         },
-        "events": ["pull_request"],
+        "events": [
+          "pull_request"
+        ],
         "options": {}
       },
       "type": "n8n-nodes-base.githubTrigger",
       "typeVersion": 1,
-      "position": [240, 620],
-      "id": "8c073c40-9f45-4709-b5e8-045a5c6ce65c",
+      "position": [
+        0,
+        400
+      ],
+      "id": "639831ba-e366-4464-80bc-af93e113efb0",
       "name": "Github Trigger",
       "webhookId": "f02079a7-2d87-4c21-b85d-3af539244853",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "3vEQUhWPIkywSnnG",
+          "id": "6F53O8Zf3hJZijLr",
           "name": "GitHub account"
         }
       }
@@ -69,16 +80,22 @@
       },
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.2,
-      "position": [800, 640],
-      "id": "74a0a633-c186-4499-9bf0-0e8e801785af",
+      "position": [
+        560,
+        420
+      ],
+      "id": "be98867f-9334-41d6-b7ce-492e616cbabc",
       "name": "HTTP Request File Diffs"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
-      "position": [-200, 320],
-      "id": "a5300524-862e-4f5f-a85f-9c42b874bfb6",
+      "position": [
+        -440,
+        100
+      ],
+      "id": "e85c1623-526c-4f15-8fbf-01edd5d2b0fd",
       "name": "GitHub Trigger Mock"
     },
     {
@@ -87,8 +104,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [460, 420],
-      "id": "850fdd8c-244a-4610-8248-8b96af7a2665",
+      "position": [
+        220,
+        200
+      ],
+      "id": "4d6a8b65-5e87-4d4a-a297-9bb830b4c360",
       "name": "Prepare Testplan Agent Input"
     },
     {
@@ -111,13 +131,16 @@
       },
       "type": "n8n-nodes-base.githubTool",
       "typeVersion": 1.1,
-      "position": [920, 640],
-      "id": "4c312caa-ce58-4fd0-8a2c-ebceb07c19cd",
+      "position": [
+        680,
+        420
+      ],
+      "id": "8650a6e1-2410-45e1-90af-90b18e905290",
       "name": "Get Issue",
       "webhookId": "3301c2fc-e9a1-4bef-84de-f4bcaab27b10",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "3vEQUhWPIkywSnnG",
+          "id": "6F53O8Zf3hJZijLr",
           "name": "GitHub account"
         }
       }
@@ -149,8 +172,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1240, 420],
-      "id": "e91ca660-8355-49ee-91b1-07cb723d209a",
+      "position": [
+        1000,
+        200
+      ],
+      "id": "a462ceb3-5b65-40b3-831a-6e580091609e",
       "name": "Needs testing?"
     },
     {
@@ -159,8 +185,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [240, 420],
-      "id": "bd825435-dd1e-450b-a822-097c32e31c70",
+      "position": [
+        0,
+        200
+      ],
+      "id": "019c7178-13fc-468f-9be8-5b24040f7856",
       "name": "Non Functional PR Mock"
     },
     {
@@ -169,16 +198,22 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [240, 220],
-      "id": "52bb1969-bfe5-4aeb-9a71-6ce97af8842e",
+      "position": [
+        0,
+        0
+      ],
+      "id": "ae55d737-1c40-4397-8550-e3e9b67a92e0",
       "name": "Functional PR Mock"
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
-      "position": [1460, 420],
-      "id": "b1bf2c36-b855-401b-8ec6-aa7971b0537e",
+      "position": [
+        1220,
+        200
+      ],
+      "id": "3dbd1035-e22e-4c3d-ad1b-b49509c115ed",
       "name": "Wait For Preview Environment",
       "webhookId": "e7581949-32a7-4f26-baf0-737a33a2341a"
     },
@@ -209,8 +244,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [20, 320],
-      "id": "962cee1d-695f-4ff4-8867-32765c34560f",
+      "position": [
+        -220,
+        100
+      ],
+      "id": "b9bd3d3e-5128-4028-9824-ecfa6be8b4e4",
       "name": "If"
     },
     {
@@ -221,50 +259,34 @@
       },
       "type": "n8n-nodes-base.httpRequestTool",
       "typeVersion": 4.2,
-      "position": [1800, 640],
-      "id": "a024fc34-7e28-4d01-ac56-aab8a0eeb7f5",
+      "position": [
+        1560,
+        420
+      ],
+      "id": "0b490478-c01f-41c6-98b9-81ed4c0302a1",
       "name": "Get preview URL from comments"
     },
     {
       "parameters": {
         "model": {
           "__rl": true,
-          "value": "gpt-4.1",
+          "value": "gpt-4.5-preview",
           "mode": "list",
-          "cachedResultName": "gpt-4.1"
+          "cachedResultName": "gpt-4.5-preview"
         },
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
-      "position": [1680, 640],
-      "id": "6e42598e-f340-4e2c-a547-b3fc174c7e4a",
+      "position": [
+        1440,
+        420
+      ],
+      "id": "5ec8582c-ad3c-4c79-8063-7914c4e34397",
       "name": "gpt-4.1",
       "credentials": {
         "openAiApi": {
-          "id": "V2LMHN8RMyVrMaRr",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "model": {
-          "__rl": true,
-          "value": "gpt-4o",
-          "mode": "list",
-          "cachedResultName": "gpt-4o"
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1.2,
-      "position": [680, 640],
-      "id": "21c5a38e-94f1-4306-9a8f-ec4165ebe3af",
-      "name": "gpt-4o",
-      "credentials": {
-        "openAiApi": {
-          "id": "V2LMHN8RMyVrMaRr",
+          "id": "nGlWYU7xnOxVR0Gl",
           "name": "OpenAi account"
         }
       }
@@ -290,13 +312,16 @@
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
-      "position": [1460, 620],
-      "id": "13016cf1-ad93-4e11-8cc4-011df19b8c53",
+      "position": [
+        1220,
+        400
+      ],
+      "id": "34344479-fd0b-4391-9af1-9dd1c3bed20a",
       "name": "GitHub Comment",
       "webhookId": "37304c5a-87ff-4394-a0f6-3f7b130e46b4",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "3vEQUhWPIkywSnnG",
+          "id": "6F53O8Zf3hJZijLr",
           "name": "GitHub account"
         }
       }
@@ -324,13 +349,16 @@
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
-      "position": [1460, 220],
-      "id": "d072bc31-1ce3-4cfb-83ef-a0a730bcb37d",
+      "position": [
+        1220,
+        0
+      ],
+      "id": "8ace04f1-f5b1-4f15-a4b2-7d55cf3868af",
       "name": "GitHub Testcases Comment",
       "webhookId": "99555e15-f7d4-4976-801e-d7e0d8a3dce3",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "3vEQUhWPIkywSnnG",
+          "id": "6F53O8Zf3hJZijLr",
           "name": "GitHub account"
         }
       }
@@ -342,8 +370,11 @@
       },
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.2,
-      "position": [2640, 640],
-      "id": "c078f13d-bf51-49df-ac10-d75aa885852e",
+      "position": [
+        2400,
+        420
+      ],
+      "id": "725049cc-d1ef-4889-ab5d-e22df2c30bbb",
       "name": "Browser Agent Structured Output"
     },
     {
@@ -353,8 +384,11 @@
       },
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.2,
-      "position": [1040, 640],
-      "id": "8d5ac207-22b8-423d-84a6-6d0d3347253c",
+      "position": [
+        800,
+        420
+      ],
+      "id": "48e5e2bc-a911-4da6-8872-a9b50e1d6bd9",
       "name": "Testplan Agent Structured Output"
     },
     {
@@ -362,14 +396,17 @@
         "profileName": "={{ $json.profile_name }}",
         "additionalFields": {}
       },
-      "id": "666d9a0c-4661-4446-bf7f-7fc8b0b81b73",
+      "id": "a090b5de-1a49-4126-a6d6-0e652388abcd",
       "name": "Session",
       "type": "n8n-nodes-base.airtop",
-      "position": [20, 880],
+      "position": [
+        -220,
+        660
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -381,14 +418,17 @@
         "getLiveView": true,
         "additionalFields": {}
       },
-      "id": "24094d0b-4026-4a3b-a7c2-4e811499aa12",
+      "id": "8e8aff2e-d640-4454-ad72-5c64b914c216",
       "name": "Window",
       "type": "n8n-nodes-base.airtop",
-      "position": [240, 880],
+      "position": [
+        0,
+        660
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -425,10 +465,13 @@
         },
         "options": {}
       },
-      "id": "b19ea3be-ee00-48a9-be85-f402844d0451",
+      "id": "fb1abbec-e826-48c3-a674-66b0e36ca89f",
       "name": "Return IDs",
       "type": "n8n-nodes-base.set",
-      "position": [460, 880],
+      "position": [
+        220,
+        660
+      ],
       "typeVersion": 3.4
     },
     {
@@ -444,10 +487,13 @@
           ]
         }
       },
-      "id": "9b31e603-16e0-4f24-9029-166717eb9f0e",
+      "id": "df434655-af20-4731-ae2c-7a6aa6acdc46",
       "name": "When Executed by Another Workflow",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "position": [-200, 880],
+      "position": [
+        -440,
+        660
+      ],
       "typeVersion": 1.1
     },
     {
@@ -462,14 +508,17 @@
           "waitForNavigation": "load"
         }
       },
-      "id": "4a5fbe50-403c-45b9-b22e-1c00428380a9",
+      "id": "90394960-d96c-4d41-b2d1-2a3cc76cca07",
       "name": "Click",
       "type": "n8n-nodes-base.airtopTool",
-      "position": [2040, 640],
+      "position": [
+        1800,
+        420
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -485,14 +534,17 @@
         "prompt": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt', `Ask anything and request to extract information from the current page, e.g. \"Is there any sign-up form? yes or no\"`, 'string') }}",
         "additionalFields": {}
       },
-      "id": "492c9bb5-8f7b-4668-a3a3-f6667fb915f7",
+      "id": "ed159222-05fb-4f91-a8a4-98c2b2ef00ba",
       "name": "Query",
       "type": "n8n-nodes-base.airtopTool",
-      "position": [2160, 640],
+      "position": [
+        1920,
+        420
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -508,14 +560,17 @@
         "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', ``, 'string') }}",
         "additionalFields": {}
       },
-      "id": "2218c9ee-7d1c-4888-9e8d-1a03e577f8ab",
+      "id": "ce4f245c-9ab5-4c19-8b76-84db768a28d8",
       "name": "Load URL",
       "type": "n8n-nodes-base.airtopTool",
-      "position": [2280, 640],
+      "position": [
+        2040,
+        420
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -525,14 +580,17 @@
         "operation": "terminate",
         "sessionId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Session_ID', \"The `sessionId` returned by the `Create session` tool\", 'string') }}"
       },
-      "id": "72f26e84-1628-40b8-a781-d5f48d42bdbf",
+      "id": "eb1a1a2e-ddb1-4d8e-b60c-14d16393dea4",
       "name": "End session",
       "type": "n8n-nodes-base.airtopTool",
-      "position": [2400, 640],
+      "position": [
+        2160,
+        420
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -578,10 +636,13 @@
           "convertFieldsToString": false
         }
       },
-      "id": "be831b11-230f-4cf0-8215-0c2c74655da0",
+      "id": "c4d89fe5-aab5-4bf0-9f18-4ec3b5606d80",
       "name": "Start browser",
       "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "position": [2520, 640],
+      "position": [
+        2280,
+        420
+      ],
       "typeVersion": 2.1
     },
     {
@@ -597,14 +658,17 @@
         "elementDescription": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Element_Description', `Describe in detail the element to type into, e.g. The search box at the top of the page`, 'string') }}",
         "additionalFields": {}
       },
-      "id": "69b765fd-c353-4390-a831-6c8d047680ab",
+      "id": "8c99afda-e119-4253-9338-8f4c91cdac59",
       "name": "Type",
       "type": "n8n-nodes-base.airtopTool",
-      "position": [1920, 640],
+      "position": [
+        1680,
+        420
+      ],
       "typeVersion": 1,
       "credentials": {
         "airtopApi": {
-          "id": "AQS7R9HmXO2cPS0P",
+          "id": "0MjTw2ZDZK1LJ2pp",
           "name": "Airtop account"
         }
       }
@@ -632,14 +696,42 @@
       },
       "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
-      "position": [2740, 420],
-      "id": "dadd089e-2141-4e88-96e7-280fe510d99c",
+      "position": [
+        2500,
+        200
+      ],
+      "id": "7f15e15c-0742-4c36-b308-d319c8a2ed2f",
       "name": "GitHub Results Comment",
       "webhookId": "99555e15-f7d4-4976-801e-d7e0d8a3dce3",
       "credentials": {
         "githubOAuth2Api": {
-          "id": "3vEQUhWPIkywSnnG",
+          "id": "6F53O8Zf3hJZijLr",
           "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.5-preview",
+          "mode": "list",
+          "cachedResultName": "gpt-4.5-preview"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        440,
+        420
+      ],
+      "id": "cf60ef4e-ff83-4afb-ac67-3949e4a7e798",
+      "name": "gpt-4.5-Preview",
+      "credentials": {
+        "openAiApi": {
+          "id": "nGlWYU7xnOxVR0Gl",
+          "name": "OpenAi account"
         }
       }
     }
@@ -816,20 +908,6 @@
         ]
       ]
     },
-    "gpt-4o": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "Testplan Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GitHub Testcases Comment": {
-      "main": [[]]
-    },
     "Browser Agent Structured Output": {
       "ai_outputParser": [
         [
@@ -961,17 +1039,28 @@
           }
         ]
       ]
+    },
+    "gpt-4.5-Preview": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Testplan Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": true,
+  "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "f9165470-3e17-414d-b860-9e03609fc511",
+  "versionId": "b1eb7e6c-1b90-4e26-8c90-e004a06ee4ad",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "e53efe907444854070074ff6b032b2f91ece1452cce6713a49551ccaae25d2aa"
+    "instanceId": "a36736785ff6feaa149030b541a416b7b35cffd670f049fe714764d6d0fcdb69"
   },
-  "id": "IP2f49LKYA3EkM03",
+  "id": "TgLcYrjGoLgP2PVo",
   "tags": []
 }
